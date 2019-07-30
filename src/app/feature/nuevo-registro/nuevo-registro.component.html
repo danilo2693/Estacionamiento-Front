@@ -1,0 +1,23 @@
+<h2>Nuevo Registro de Vehiculo</h2>
+<form [formGroup]="registroForm" 
+	  (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="tipo">Tipo de Vehiculo:</label>
+        <select class="form-control" id="tipo" required name="tipo" [formControl]="tipoControl" #tipo>
+            <option value='' >Seleccionar</option>
+            <option value=0 >CARRO</option>
+            <option value=1 >MOTO</option>
+        </select>   
+    </div>
+    <div class="form-group col-md-6">
+      <label for="placa">Placa:</label>
+      <input type="text" class="form-control" [formControl]="placaControl" autocomplete="off" id="placa" placeholder="Placa" #placa>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="cilindraje">Cilindraje:</label>
+    <input type="number" class="form-control" id="cilindraje" placeholder="Cilindraje" [formControl]="cilindrajeControl" #cilindraje>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="registroForm.invalid">Guardar</button>
+</form>

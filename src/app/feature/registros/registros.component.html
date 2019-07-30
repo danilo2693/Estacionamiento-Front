@@ -1,0 +1,24 @@
+<h1>Vehiculos Estacionados</h1>
+<br>
+      <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Placa</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Hora Entrada</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+
+        <tr *ngFor="let registro of registros" registro="registro">
+                  <td>{{registro?.id}}</td>
+                  <td>{{registro?.placa| uppercase}}</td>
+                  <td> {{mostrarTipo(registro?.tipoId)}}</td>
+                  <td>{{registro?.entrada | date:'medium'}}</td>
+                  <td><button (click)="retirar(registro?.placa)" class="btn btn-primary" id="checkout">Retirar</button></td>
+              </tr>
+
+</tbody>
+</table>

@@ -6,6 +6,7 @@
       <th scope="col">#</th>
       <th scope="col">Placa</th>
       <th scope="col">Tipo</th>
+      <th scope="col">Cilindraje</th>
       <th scope="col">Hora Entrada</th>
       <th scope="col"></th>
     </tr>
@@ -16,6 +17,7 @@
                   <td>{{registro?.id}}</td>
                   <td>{{registro?.placa| uppercase}}</td>
                   <td> {{mostrarTipo(registro?.tipoId)}}</td>
+                  <td>{{registro?.cilindraje}}</td>
                   <td>{{registro?.entrada | date:'medium'}}</td>
                   <td><button (click)="retirar(registro?.placa)" class="btn btn-primary" id="checkout">Retirar</button></td>
               </tr>

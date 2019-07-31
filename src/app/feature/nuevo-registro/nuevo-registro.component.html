@@ -5,9 +5,9 @@
     <div class="form-group col-md-6">
         <label for="tipo">Tipo de Vehiculo:</label>
         <select class="form-control" id="tipo" required name="tipo" [formControl]="tipoControl" #tipo>
-            <option value='' >Seleccionar</option>
-            <option value=0 >CARRO</option>
-            <option value=1 >MOTO</option>
+            <option [value]="" selected class="opciones">Seleccionar</option>
+            <option [value]="0" class="opciones">CARRO</option>
+            <option [value]="1" class="opciones">MOTO</option>
         </select>   
     </div>
     <div class="form-group col-md-6">
@@ -19,5 +19,5 @@
     <label for="cilindraje">Cilindraje:</label>
     <input type="number" class="form-control" id="cilindraje" placeholder="Cilindraje" [formControl]="cilindrajeControl" #cilindraje>
   </div>
-  <button type="submit" class="btn btn-primary" [disabled]="registroForm.invalid">Guardar</button>
+  <button type="submit" id="guardar" class="btn btn-primary" [disabled]="registroForm.invalid" #guardar>Guardar</button>
 </form>
